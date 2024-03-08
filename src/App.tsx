@@ -43,18 +43,24 @@ const App: React.FC = () => {
       {error ? (
         <h1>Error: {error}</h1>
       ) : (
-        <>
-          <h1>Axios fetching result:</h1>
+        <div className='flex justify-between w-1/3 px-24'>
           <div>
-            {userData.map((user) => (
-              <div key={user.id} className='border-b my-2'>
-                <h1>User ID: {user.id}</h1>
-                <h2>Email: {user.email}</h2>
-                <h3>Name: {`${user.first_name} ${user.last_name}`}</h3>
-              </div>
-            ))}
+            <h1>Axios fetching result:</h1>
+            <div>
+              {userData.map((user) => (
+                <div key={user.id} className='my-2'>
+                  <h3>
+                    User ID: {user.id} Name:{" "}
+                    {`${user.first_name} ${user.last_name}`}
+                  </h3>
+                </div>
+              ))}
+            </div>
           </div>
-        </>
+          <div className='underline'>
+            <a href='/react-router-test'>Click to test react router</a>
+          </div>
+        </div>
       )}
     </main>
   );
